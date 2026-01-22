@@ -1,9 +1,17 @@
 const express = require('express');
 const figlet = require('figlet');
+const path = require('path');
 
 const app = express();
 
 app.use(express.json({ limit: '32kb' }));
+
+const publicDir = path.join(__dirname, '..', 'public');
+app.use(express.static(publicDir));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(publicDir, 'index.html'));
+});
 
 app.get('/health', (req, res) => {
   res.json({ ok: true });

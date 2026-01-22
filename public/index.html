@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerador de Arte ASCII</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>Gerador de Arte ASCII</h1>
+        <p>Digite um texto (com múltiplas linhas) e gere a arte ASCII abaixo.</p>
+      </header>
+
+      <main class="grid">
+        <section class="card">
+          <div class="row">
+            <div class="field">
+              <label for="font">Fonte</label>
+              <select id="font" name="font">
+                <option value="Standard">Standard</option>
+              </select>
+            </div>
+
+            <div class="actions">
+              <button id="btnGenerate" class="btn primary" type="button">Gerar</button>
+              <button id="btnCopy" class="btn" type="button" disabled>Copiar</button>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="text">Texto</label>
+            <textarea id="text" name="text" rows="6" placeholder="Ex: Linha 1&#10;Linha 2"></textarea>
+            <div class="hint">
+              Dica: você pode usar Enter para quebrar linhas. Máximo: 10 linhas, 80 caracteres por linha.
+            </div>
+          </div>
+
+          <div id="status" class="status" aria-live="polite"></div>
+        </section>
+
+        <section class="card">
+          <div class="row">
+            <h2>Resultado</h2>
+            <div class="right">
+              <span class="pill" id="pillPort"></span>
+            </div>
+          </div>
+          <pre id="output" class="output" tabindex="0"></pre>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <a href="/api/fonts" target="_blank" rel="noreferrer">Ver fontes (JSON)</a>
+        <a href="/health" target="_blank" rel="noreferrer">Health</a>
+      </footer>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
