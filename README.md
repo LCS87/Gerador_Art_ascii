@@ -1,5 +1,7 @@
 # Gerador de Arte ASCII (Node.js)
 
+![Interface do Gerador de Arte ASCII](./assets/Geradorart.png)
+
 API + frontend para gerar arte ASCII estilizada a partir de texto.
 
 ## Requisitos
